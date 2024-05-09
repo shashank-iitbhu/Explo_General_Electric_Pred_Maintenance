@@ -11,8 +11,9 @@ logistic_regression_model = joblib.load('./models/LR.joblib')
 random_forest_model = joblib.load('./models/RF.joblib')
 
 def predict_failure(model, type_of_material, air_temperature, process_temperature, rotational_speed, torque, tool_wear):
-    prediction = model([type_of_material, air_temperature, process_temperature, rotational_speed, torque, tool_wear])
-    return prediction
+    features = np.array([[type_of_material, air_temperature, process_temperature, rotational_speed, torque, tool_wear]])
+    prediction = model.predict(features)
+    return prediction[0]
 
 # Sidebar inputs
 st.sidebar.title("Enter Machine Parameters")
