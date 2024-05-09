@@ -4,19 +4,11 @@ import pandas as pd
 import numpy as np
 import joblib
 
-# modelinfo = {
-#     "Logistic Regression": "./model/LR.joblib",
-#     "Random Forest": "./model/RF.joblib",
-# }
-# models = {}
-# for i, v in modelinfo.items():
-#     models[i] = joblib.load(open(v, "rb"))
-
 st.title("Predictive Maintenance App")
 
 # Load the trained models
-logistic_regression_model = joblib.load('./model/LR.joblib')
-random_forest_model = joblib.load('./model/RF.joblib')
+logistic_regression_model = joblib.load('./models/LR.joblib')
+random_forest_model = joblib.load('./models/RF.joblib')
 
 def predict_failure(model, type_of_material, air_temperature, process_temperature, rotational_speed, torque, tool_wear):
     prediction = model([type_of_material, air_temperature, process_temperature, rotational_speed, torque, tool_wear])
