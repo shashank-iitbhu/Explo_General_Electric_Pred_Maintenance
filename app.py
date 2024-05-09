@@ -3,7 +3,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-from model import predict_logistic_regression, predict_random_forest
+
+# modelinfo = {
+#     "Logistic Regression": "./model/LR.joblib",
+#     "Random Forest": "./model/RF.joblib",
+# }
+# models = {}
+# for i, v in modelinfo.items():
+#     models[i] = joblib.load(open(v, "rb"))
 
 st.title("Predictive Maintenance App")
 
