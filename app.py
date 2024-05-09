@@ -15,8 +15,8 @@ import joblib
 st.title("Predictive Maintenance App")
 
 # Load the trained models
-logistic_regression_model = joblib.load('./models/LR.joblib')
-random_forest_model = joblib.load('./models/RF.joblib')
+logistic_regression_model = joblib.load('./model/LR.joblib')
+random_forest_model = joblib.load('./model/RF.joblib')
 
 def predict_failure(model, type_of_material, air_temperature, process_temperature, rotational_speed, torque, tool_wear):
     prediction = model([type_of_material, air_temperature, process_temperature, rotational_speed, torque, tool_wear])
